@@ -2,7 +2,6 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-import MainNav from "_navbar.tsx"
 
 import { api } from "~/utils/api";
 
@@ -17,14 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col" >
-        <nav className="grid grid-cols-3 h-14 w-full justify-center">
-          <Link href={"/"} className="m-auto">Learning with Llama</Link>
-          <div className="col-start-3 m-auto" >
-            <Link className={`${link}`} href={"/signin"}>Sign In</Link>
-            <Link className={`${link}`} href={"/signup"}>Sign Up</Link>
-          </div>
-        </nav>
-
+        <MainNav />
         <nav>
 
         </nav>
@@ -59,3 +51,19 @@ const AuthShowcase: React.FC = () => {
     </div>
   );
 };
+
+const link = "p-2 m-2 border-2"
+
+const MainNav: React.FC = () => {
+
+  return (
+    <nav className="grid grid-cols-3 h-14 w-full justify-center">
+      <Link href={"/"} className="m-auto">Learning with Llama</Link>
+      <div className="col-start-3 m-auto" >
+        <Link className={`${link}`} href={"/signin"}>Sign In</Link>
+        <Link className={`${link}`} href={"/signup"}>Sign Up</Link>
+      </div>
+    </nav>
+  )
+}
+
