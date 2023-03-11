@@ -4,9 +4,9 @@ import { NextPage } from "next";
 
 const Lessons: NextPage = () => {
     return (
-        <>
+    <>  
         <h1>Lessons</h1>
-        </>
+    </>
     );
 }
 
