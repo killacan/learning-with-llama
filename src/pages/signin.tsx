@@ -1,8 +1,7 @@
 
 
-import { NextPage } from "next";
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { getProviders, signIn, useSession } from "next-auth/react"
+import { getProviders, signIn } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import  NextAuth from "../pages/api/auth/[...nextauth]";
 
