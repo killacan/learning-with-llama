@@ -6,7 +6,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>
@@ -38,10 +37,6 @@ const AuthShowcase: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-center text-2xl text-white">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
       <button
         className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
@@ -61,8 +56,8 @@ const MainNav: React.FC = () => {
   return (
     <nav className="grid grid-cols-3 h-14 w-full justify-center">
       <Link href={"/"} className="m-auto">Learning with Llama</Link>
+      <AuthShowcase />
       {!sessionData ? <div className="col-start-3 m-auto" >
-        <AuthShowcase />
         {/* <Link className={`${link}`} href={"/signup"}>Sign Up</Link> */}
       </div> : 
       <div className="col-start-3 m-auto"><Link className={`${link}`} href={`/profile`} >profile</Link></div>}

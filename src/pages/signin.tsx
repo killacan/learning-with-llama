@@ -8,8 +8,8 @@ import  NextAuth from "../pages/api/auth/[...nextauth]";
 
 
 const SignIn = ({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-    const { data: sessionData } = useSession();
-    
+    // const { data: sessionData } = useSession();
+
     return (
         <>
             {Object.values(providers).map((provider) => (
