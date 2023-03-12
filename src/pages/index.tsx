@@ -59,7 +59,7 @@ const Home: NextPage = () => {
           </p>
 
         <nav className='absolute bottom-0 w-full text-xl text-center pb-2'>
-          <a href="" target="_blank">Github</a>
+          <a href="https://github.com/killacan/learning-with-llama" target="_blank">Github</a>
         </nav>
 
         
