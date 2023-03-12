@@ -14,9 +14,54 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col" >
         <MainNav />
-        <nav>
+          <h2 className="text-3xl">
+            Start to finish full stack development for free!
+          </h2>
 
+          <h3>
+            Why?
+          </h3>
+
+          <p>
+            I put this website together so that information on full stack development could be provided
+            to everybody for free. I want to help people on their journey to becoming a developer, without
+            any content being locked behind a pay wall. 
+          </p>
+
+          <p>
+            The problem that I see with a lot of the free content (although fantastic) is that it does not do a good
+            job getting you from start to finish as a developer. People assume that you already know how to do things,
+            which can be frustrating. I want this to work so that you can have all the info you need to get to a 
+            beginner level. From there you can see example projects and further tutorials, knowing you have the 
+            knowledge you need to learn on your own. 
+          </p>
+
+          <p>
+            The problem I see with a lot of paid content is that it costs an arm and a leg, and after you 
+            complete the course, usually after at least a few months, the long process of finding a job
+            can take a toll on you. Depending on the requirements of the school or bootcamp, you might
+            be hanging out to dry.
+          </p>
+
+          <p>
+            Sometimes it can be difficult to know where to start, and how to do things in a step by step manner.
+            My goal here is to have all the information layed out, with fun example projects that build on each other.
+          </p>
+
+          <p>
+            My hope is that I will not have to write everything out myself, but just give enough info and link to other
+            free content or get some of the community to help out. 
+          </p>
+
+          <p>
+            This is just going to be a passion project of mine, and hopefully I can use it to augment my YouTube
+            and Twitch channels. 
+          </p>
+
+        <nav className='absolute bottom-0 w-full text-xl text-center pb-2'>
+          <a href="" target="_blank">Github</a>
         </nav>
+
         
       </main>
     </>
@@ -24,6 +69,8 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+const link = "rounded-full bg-white/10 px-10 py-3 m-auto font-semibold text-white no-underline transition hover:bg-white/20"
 
 const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
@@ -36,7 +83,7 @@ const AuthShowcase: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <button
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+        className={`${link}`}
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
@@ -45,7 +92,6 @@ const AuthShowcase: React.FC = () => {
   );
 };
 
-const link = "rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
 
 const MainNav: React.FC = () => {
 
@@ -54,11 +100,13 @@ const MainNav: React.FC = () => {
   return (
     <nav className="grid grid-cols-3 h-14 w-full justify-center">
       <Link href={"/"} className="m-auto">Learning with Llama</Link>
-      <AuthShowcase />
+      <div className="flex flex-column col-start-3 m-auto">
+        <AuthShowcase />
       {!sessionData ? <div className="col-start-3 m-auto" >
         {/* <Link className={`${link}`} href={"/signup"}>Sign Up</Link> */}
       </div> : 
-      <div className="col-start-3 m-auto"><Link className={`${link}`} href={`/profile`} >profile</Link></div>}
+      <div className="col-start-3 my-auto mx-2"><Link className={`${link}`} href={`/profile`} >Profile</Link></div>}
+      </div>
     </nav>
   )
 }
