@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col" >
         <MainNav />
+        <AuthShowcase />
         <nav>
 
         </nav>
