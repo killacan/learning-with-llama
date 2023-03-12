@@ -17,7 +17,6 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col" >
         <MainNav />
-        <AuthShowcase />
         <nav>
 
         </nav>
@@ -53,17 +52,20 @@ const AuthShowcase: React.FC = () => {
   );
 };
 
-const link = "p-2 m-2 border-2"
+const link = "rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
 
 const MainNav: React.FC = () => {
+
+  const { data: sessionData } = useSession();
 
   return (
     <nav className="grid grid-cols-3 h-14 w-full justify-center">
       <Link href={"/"} className="m-auto">Learning with Llama</Link>
-      <div className="col-start-3 m-auto" >
-        <Link className={`${link}`} href={"/signin"}>Sign In</Link>
-        <Link className={`${link}`} href={"/signup"}>Sign Up</Link>
-      </div>
+      {!sessionData ? <div className="col-start-3 m-auto" >
+        <AuthShowcase />
+        {/* <Link className={`${link}`} href={"/signup"}>Sign Up</Link> */}
+      </div> : 
+      <div className="col-start-3 m-auto"><Link className={`${link}`} href={`/profile`} >profile</Link></div>}
     </nav>
   )
 }
