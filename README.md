@@ -2,7 +2,7 @@
 
 Welcome to Learning with Llama! This website is designed to help you learn full stack web development from start to finish.
 
-## Why
+## Why?
       
 I put this website together so that information on full stack development could be provided
 to everybody for free. I want to help people on their journey to becoming a developer, without
@@ -27,6 +27,10 @@ free content or get some of the community to help out.
 
 This is just going to be a passion project of mine, and hopefully I can use it to augment my YouTube
 and Twitch channels. 
+
+## How?
+
+This is getting built in the T3 stack (Next.js, TypeScript, TailwindCSS, tRPC, Prisma, and NextAuth.js).
 
 ## Features
 
