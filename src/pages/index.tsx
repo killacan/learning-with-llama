@@ -16,10 +16,10 @@ const Home: NextPage = () => {
         <div className="">
           <MainNav />
         </div>
-        <div className="">
+        <div className="px-10">
           <div >
             
-            <h1 className="text-6xl">
+            <h1 className="text-6xl text-black bg-[#892dcf]">
               Learn to Code with Leisure Llama
             </h1>
             
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const link = "rounded-full bg-white/10 px-10 py-3 m-auto font-semibold text-white no-underline transition hover:bg-white/20"
+const link = "rounded-full bg-white/10 px-10 py-3 m-auto font-semibold no-underline transition hover:bg-white/20"
 
 const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
