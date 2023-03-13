@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <div className="px-10">
           <div >
             
-            <h1 className="text-6xl text-black bg-[#892dcf]">
+            <h1 className="text-6xl bg-[#892dcf]">
               Learn to Code with Leisure Llama
             </h1>
             
